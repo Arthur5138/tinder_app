@@ -1,0 +1,24 @@
+<div class="matchingPage">
+  <header class="header">
+    <i class="fas fa-comments fa-3x"></i>
+    <div class="header_logo"><%= link_to image_tag("techpit-march-icon.png"), users_path %></div>
+  </header>
+  <div class="container">
+    <div class="mt-5">
+      <div class="matchingNum"><%= @match_users.size %>人とマッチングしています</div>
+      <h2 class="pageTitle">マッチングした人一覧</h2>
+      <div class="matchingList">
+        <% @match_users.each do |user| %>
+          <div class="matchingPerson">
+          <div class="matchingPerson_img"><%= image_tag user.img_name %></div>
+            <div class="matchingPerson_name"><%= user.name %></div>
+          <%= form_tag :chat_index, method: :post do %>
+          <input name="user_id" type="hidden" value="<%= user.id %>" />
+          <%= submit_tag "チャットを開く", class: "chatForm_btn" %>
+          <% end %>
+          </div>
+        <% end %>
+      </div>
+    <div>
+  </div>
+</div>

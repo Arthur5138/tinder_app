@@ -3,12 +3,16 @@
   <head>
     <title>TinderApp</title>
     <%= csrf_meta_tags %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1" >
+    <meta name="current_user_id" content="<%= current_user.id if current_user %>">
+    <!--　スマホで表示されるときに適正なスタイルにする。viewport参照 https://bokunonikki.net/post/2017/0829_rails_bootstrap_compression/ -->
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
   </body>
 </html>
