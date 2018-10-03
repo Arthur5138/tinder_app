@@ -31,3 +31,11 @@ User.create!(
   sex: 1,
   img_name: open("#{Rails.root}/db/dummy_images/4.jpg")
 )
+User.create!(
+  email: 'user5@example.com',
+  password: 'aaaaaaaa',
+  name: 'Arthur',
+  self_introduction: '毛むくじゃらですがよろしくです。',
+  sex: 0,
+  img_name: open("#{Rails.root}/db/dummy_images/5.jpg")
+)
